@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MVCDBEntity4.Models.Employee>
+
+@*<script src="~/Scripts/jquery-ui-1.8.20.min.js" type="text/javascript"></script>*@
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" language="javascript">
+    $(function () {
+        $("#checkall").click(function () {
+            //$("input[name='id_list']").attr("checked", this.checked);
+            $("input[name='id_list']").prop('checked', this.checked);
+        });
+
+        $("input[name='id_list']").click(function () {
+           
+            if( $("input[name='id_list']").length ==  $("input[name='id_list']:checked").length)
+            {
+                //$("#checkall").attr("checked", true);
+                $("#checkall").prop('checked', true);
+            }
+            else
+            {
+                //$("#checkall").removeAttr("checked");
+                $("#checkall").prop('checked', false);
+            }
+        });
+
+        $("#btn_submit").click(function () {
+            var count = $("input[name='id_list']:checked").length;
+            if(count == 0)
+            {
+                alert("No Rows Selected To Delete.");
+                return false;
+            }
+            else
+            {
+                return confirm(alert(count + " Records will be deleted"));
+            }
+        });
+    });
+</script>
+
+<div><br /><br />
+    @using (Html.BeginForm("Delete", "DeleteMultiple", FormMethod.Post))
+    {
+        <table border="1">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkall" /></th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>DateOfBirth</th>
+                    <th>DepartmentId</th>
+                </tr>
+            </thead>
+            <tbody>
+                @Html.EditorForModel()
+            </tbody>
+        </table>
+        <br /><input type="submit" id="btn_submit" value="Delete Selected Employees." />
+    }
+</div>

@@ -1,0 +1,6 @@
+﻿@model System.DateTime?
+Using Date Template
+@*@Html.TextBox("", Model.HasValue ? Model.Value.ToString("dd/MMM/yyyy") : "", new { @class = "datefield" });*@
+@Html.TextBox("", Model.HasValue ? ViewData.TemplateInfo.FormattedModelValue: "", new { @class = "datefield" });
+
+@*@Html.TextBox("", String.Format("{0:d}", Model.HasValue ? Model.Value.ToShortDateString() : string.Empty), new { @class = "datepicker" })*@

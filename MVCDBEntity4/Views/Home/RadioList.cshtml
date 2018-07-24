@@ -1,0 +1,22 @@
+﻿@model MVCDBEntity4.Models.Employee2
+
+@{
+    ViewBag.Title = "RadioList";
+}
+
+<h2>RadioList</h2>
+
+@using (Html.BeginForm())
+{
+    foreach(var dept in Model.Departmentlist)
+    {
+        @Html.RadioButtonFor(m => m.SelectedDept, dept.Id,
+        (dept.IsSelected.HasValue && dept.IsSelected.Value)? new { @checked="checked"}:null)@dept.Name
+        <br />
+    }
+    <br />
+    <br />
+    
+    @Html.ActionLink("Click", "RadioList")
+    <input type="submit" value="Submit" />
+}

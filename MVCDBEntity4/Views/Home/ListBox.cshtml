@@ -1,0 +1,13 @@
+﻿@model MVCDBEntity4.Models.CitiesModel
+
+@{
+    ViewBag.Title = "CheckBoxList_get";
+}
+
+<h2>CheckBoxList_get</h2>
+@using (Html.BeginForm())
+{
+    @Html.ListBoxFor(x => x.SelectCities, Model.Cities)
+    <br />
+    <input type="submit" value="Submit" />
+}

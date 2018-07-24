@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MVCDBEntity4.Models.City>
+
+@{
+    ViewBag.Title = "CheckBox_get";
+}
+
+<h2>CheckBox_get</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <br />
+    <input type="submit" value="submit" />
+}

@@ -1,0 +1,62 @@
+﻿@model MVCDBEntity4.Models.EmployeeDetail
+
+<table>
+    <tr style="border: 1px solid grey;">
+        <td>
+            @Html.Custom_Image(@Model.Photo, @Model.AlternateText, 100, 163)
+        </td>
+
+        <td style="border: 1px solid grey;">
+            <table>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.FullName)
+                    </td>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Gender)
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Age)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.Age)
+                    </td>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.HireDate)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.HireDate)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmailAddress)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.EmailAddress)
+                    </td>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.PersonalWebsite)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelModel => Model.PersonalWebsite)
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

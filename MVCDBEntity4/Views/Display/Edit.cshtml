@@ -1,0 +1,42 @@
+﻿@model MVCDBEntity4.Models.EmployeeDetail
+
+@{
+    ViewBag.Title = "Edit";   
+}
+
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+
+<script type="text/javascript">
+    $().ready(function () {
+        $("input:datetime.datefield").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showOn: "button",
+            buttonImageOnly: true
+        });
+        $("input:datetime.datefield").datepicker('setValue', new Date());
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        debugger;
+        $(".datepicker1").datepicker({ dateFormat: 'dd-MM-yy' });
+        //$("input:datetime.datefield").datepicker({ dateFormat: 'dd-MM-yy' });          
+    });
+
+</script>
+<h2>Edit</h2>
+<div>
+    @Html.TextBox("StartDate", string.Empty, new { @class = "datepicker1" })
+    @using (@Html.BeginForm())
+    {
+        @Html.EditorForModel()
+        <br/>
+        <br/>
+        <input type="submit" value="submit" />
+    }
+</div>

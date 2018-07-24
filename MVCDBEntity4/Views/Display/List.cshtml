@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MVCDBEntity4.Models.EmployeeDetail>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<div>received @@ @DateTime.Now.ToString()</div>
+@foreach (var item in Model)
+{
+   @*@Html.Partial("_List",item)*@
+    { @Html.Partial("_List", item);}
+    <br />
+}
+
+<div>
+    <br />
+    @Html.Action("OutputCache")
+</div>
+
